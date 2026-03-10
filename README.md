@@ -1,6 +1,6 @@
 # ZK Steward Companion Skills
 
-Companion skills for **[ZK Steward](https://github.com/msitarzewski/agency-agents)** (from [The Agency](https://github.com/msitarzewski/agency-agents)). Use these with the ZK Steward agent to get the full Luhmann-style knowledge-base workflow: link-proposer, index-note, strategic-advisor, and workflow-audit.
+Companion skills for **[ZK Steward](https://github.com/msitarzewski/agency-agents)** (from [The Agency](https://github.com/msitarzewski/agency-agents)). Use these with the ZK Steward agent to get the full Luhmann-style knowledge-base workflow.
 
 ## What’s in this repo
 
@@ -10,6 +10,9 @@ Companion skills for **[ZK Steward](https://github.com/msitarzewski/agency-agent
 | **index-note** | Create or update index/MOC entries; daily sweep; network repair from health reports. |
 | **strategic-advisor** | Default when intent is unclear: multi-perspective analysis, trade-offs, action options. |
 | **workflow-audit** | Check multi-phase flows (e.g. deep-learning, meeting-note) against a checklist; Deming + Gawande style. |
+| **structure-note** | Reading-order and logic trees for articles, project docs, or complex topics; Folgezettel-style argument chains. |
+| **random-walk** | Random walk the knowledge network; tension/forgotten/island modes; script in `random-walk/scripts/get_random_notes.sh`. |
+| **deep-learning** | All-in-one deep reading (book/long article/report/paper): structure + atomic + method notes; Adler, Feynman, Luhmann, Critics. |
 
 Skills are in **Chinese** (original language). Paths in the docs (e.g. `05_每日记录/`, `03_索引/`, `memory/`) follow the original vault layout—**adapt them to your own folder names** when installing.
 
@@ -22,12 +25,15 @@ Skills are in **Chinese** (original language). Paths in the docs (e.g. `05_每�
      cp -r skills/index-note   .cursor/skills/
      cp -r skills/strategic-advisor .cursor/skills/
      cp -r skills/workflow-audit .cursor/skills/
+     cp -r skills/structure-note .cursor/skills/
+     cp -r skills/random-walk .cursor/skills/
+     cp -r skills/deep-learning .cursor/skills/
      ```
    - **Option B**: Clone this repo as a subfolder and add it to your Cursor rules/skills path if your setup supports it.
 
-2. **Path customization**: If your vault uses different folders (e.g. `daily/`, `index/`), edit the paths inside each SKILL.md and, for link-proposer, the script `link-proposer/scripts/get_random_notes.sh` (or set env vars `NOTES_DIR`, `INDEX_DIR` before running).
+2. **Path customization**: If your vault uses different folders (e.g. `daily/`, `index/`), edit the paths inside each SKILL.md and, for link-proposer and random-walk, the script `get_random_notes.sh` in each (or set env vars `NOTES_DIR`, `INDEX_DIR` before running).
 
-3. **link-proposer script**: From your vault root, run the random-notes script so path defaults work:
+3. **Random-notes script** (link-proposer path C, random-walk): From your vault root, run so path defaults work:
    ```bash
    export NOTES_DIR="05_每日记录"   # or your daily-notes folder
    export INDEX_DIR="03_索引"      # or your index folder
